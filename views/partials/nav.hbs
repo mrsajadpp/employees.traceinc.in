@@ -1,0 +1,122 @@
+<style>
+    .navigation {
+        width: 100vw;
+        height: 60px;
+        position: fixed;
+        top: 0px;
+        box-shadow: 0px 0px 1px;
+        background-color: #fff;
+        display: flex;
+    }
+
+    .navigation img {
+        width: 100px;
+    }
+
+    .navigation .left {
+        width: 60px;
+        height: 100%;
+    }
+
+    .navigation .center {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation .right {
+        width: 60px;
+        height: 100%;
+    }
+
+    .navigation button {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .dropnav {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 60px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropnav .nav {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0px 1px;
+    }
+
+    .dropnav .nav a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .dropnav .nav a button {
+        width: 100%;
+        height: 100%;
+        border: 0px;
+        padding-left: 10px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        color: #f44336;
+    }
+
+    .navtext {
+        font-size: 20px;
+        font-weight: 400;
+        color: #000;
+    }
+</style>
+<div class="navigation">
+    <div class="left">
+        <button id="dropbtn">
+            <box-icon id="dropicon" type='solid' name='chevron-down'></box-icon>
+        </button>
+    </div>
+    <div class="center">
+        <img src="images/traceinc.png" alt="Trace inc">
+    </div>
+    <div class="right">
+
+    </div>
+</div>
+<div class="dropnav hide" id="dropnav">
+    <div class="nav">
+        <a href="/">
+            <button><box-icon name='home-alt-2' color='#f44336'></box-icon>&nbsp;<span
+                    class="navtext">Home</span></button>
+        </a>
+    </div>
+</div>
+<script>
+    let dropbtn = document.getElementById('dropbtn');
+    let dropnav = document.getElementById('dropnav');
+    let dropicon = document.getElementById('dropicon');
+    dropbtn.addEventListener('click', () => {
+        dropnav.classList.toggle('hide');
+        if (dropnav.classList.contains('hide')) {
+            dropbtn.innerHTML = "<box-icon name='chevron-down' type='solid' ></box-icon>";
+        } else {
+            dropbtn.innerHTML = "<box-icon name='chevron-up' type='solid' ></box-icon>";
+        }
+    })
+</script>
